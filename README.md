@@ -64,7 +64,7 @@ qoixx:     1.1020      1.4696       421.211       315.848       463   28.2%
 
 ## License
 
-[MIT](https://github.com/wx257osn2/qoixx/blob/master/LICENSE)
+[MIT](https://github.com/AdamantConlanger/qoixx/blob/master/LICENSE)
 
 ## FAQ
 
@@ -73,3 +73,6 @@ qoixx:     1.1020      1.4696       421.211       315.848       463   28.2%
 - Q. Can I port it to older C++?
     - A. Of course, you can fork this repository and port it to older C++.
          However, in this repository I never uses older C++.
+- Q. Why is there no main function?
+    - A. Because I'm using this as a submodule.
+      See [the original](https://github.com/wx257osn2/qoixx).
