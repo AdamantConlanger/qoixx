@@ -121,32 +121,4 @@ static inline void write_qoi(const std::filesystem::path& file_path, const image
   save_file(file_path, encoded);
 }
 
-int main(int argc, char **argv)try{
-  if(argc < 3){
-    std::cout << "Usage: " << argv[0] << " <infile> <outfile>\n"
-                 "Examples:\n"
-                 "  " << argv[0] << " input.png output.qoi\n"
-                 "  " << argv[0] << " input.qoi output.png" << std::endl;
-    return EXIT_FAILURE;
-  }
 
-  const std::string_view in{argv[1]}, out{argv[2]};
-  const auto im = [&in]()->image{
-    if(in.ends_with(".png"))
-      return read_png(in);
-    else if(in.ends_with(".qoi"))
-      return read_qoi(in);
-    else
-      throw std::runtime_error("infile " + std::string{in} + " is not png/qoi file");
-  }();
-
-  if(out.ends_with(".png"))
-    write_png(out, im);
-  else if(out.ends_with(".qoi"))
-    write_qoi(out, im);
-  else
-    throw std::runtime_error("outfile " + std::string{out} + " is not png/qoi file name");
-}catch(std::exception& e){
-  std::cerr << e.what() << std::endl;
-  return EXIT_FAILURE;
-}
